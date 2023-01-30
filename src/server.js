@@ -32,11 +32,7 @@ const init = async () => {
     }
   })
 
-  await server.register([
-    {
-      plugin: Jwt
-    }
-  ])
+  await server.register(Jwt)
 
   server.auth.strategy('notesapp_jwt', 'jwt', {
     keys: process.env.ACCESS_TOKEN_KEY,
